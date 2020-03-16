@@ -4,19 +4,19 @@ namespace FizzBuzz
 {
     class FizzBuzzInput
     {
-        public void CustomerInput(int LowerBound, int UpperBound)
+        public void CustomerInput(int LowerBound, int UpperBound, int Fizz, int Buzz)
         {
             for (int i = LowerBound; i <= UpperBound; i++)
             {
-                if (i % 3 ==0 && i % 5 == 0)
+                if (i % Fizz == 0 && i % Buzz == 0)
                 {
                     System.Console.WriteLine("FizzBuzz");
                 }
-                else if (i % 3 == 0)
+                else if (i % Fizz == 0)
                 {
                     System.Console.WriteLine("Fizz");
                 }
-                else if (i % 5 == 0)
+                else if (i % Buzz == 0)
                 {
                     System.Console.WriteLine("Buzz");
                 }
@@ -31,12 +31,17 @@ namespace FizzBuzz
     {
         static void Main(string[] args)
         {
-            FizzBuzzInput fizz = new FizzBuzzInput();
+            FizzBuzzInput input = new FizzBuzzInput();
             System.Console.WriteLine("Enter lower bound:");
             var lowerBound = System.Console.ReadLine();
             System.Console.WriteLine("Enter upper bound:");
             var upperBound = System.Console.ReadLine();
-            fizz.CustomerInput(Int32.Parse(lowerBound), Int32.Parse(upperBound));
+            System.Console.WriteLine("Enter Fizz:");
+            var fizz = System.Console.ReadLine();
+            System.Console.WriteLine("Enter Buzz:");
+            var buzz = System.Console.ReadLine();
+            input.CustomerInput(Int32.Parse(lowerBound), Int32.Parse(upperBound),
+                                Int32.Parse(fizz), Int32.Parse(buzz));
         }
     }
 }
