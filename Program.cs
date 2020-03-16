@@ -4,9 +4,9 @@ namespace FizzBuzz
 {
     class FizzBuzzInput
     {
-        public void CustomerInput(int UpperBound)
+        public void CustomerInput(int LowerBound, int UpperBound)
         {
-            for (int i = 1; i <= UpperBound; i++)
+            for (int i = LowerBound; i <= UpperBound; i++)
             {
                 if (i % 3 ==0 && i % 5 == 0)
                 {
@@ -31,7 +31,8 @@ namespace FizzBuzz
     {
         static void Main(string[] args)
         {
-            
+            FizzBuzzInput fizz = new FizzBuzzInput();
+            fizz.CustomerInput(5, 16);
         }
     }
 }
