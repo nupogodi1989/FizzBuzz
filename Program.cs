@@ -32,7 +32,11 @@ namespace FizzBuzz
         static void Main(string[] args)
         {
             FizzBuzzInput fizz = new FizzBuzzInput();
-            fizz.CustomerInput(5, 16);
+            System.Console.WriteLine("Enter lower bound:");
+            var lowerBound = System.Console.ReadLine();
+            System.Console.WriteLine("Enter upper bound:");
+            var upperBound = System.Console.ReadLine();
+            fizz.CustomerInput(Int32.Parse(lowerBound), Int32.Parse(upperBound));
         }
     }
 }
